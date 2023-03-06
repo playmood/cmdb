@@ -1,0 +1,9 @@
+pkg: github.com/playmood/cmdb
+name: cmdb
+description: 云主机配置管理中心
+enable_keyauth: false
+enable_mysql: true
+enable_mongodb: false
+gen_example: true
+http_framework: go-restful
+enable_cache: false
