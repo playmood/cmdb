@@ -12,10 +12,12 @@ require (
 	github.com/go-playground/validator/v10 v10.11.2
 	github.com/go-sql-driver/mysql v1.7.0
 	github.com/golang/protobuf v1.5.2
+	github.com/huaweicloud/huaweicloud-sdk-go-v3 v0.1.30
 	github.com/imdario/mergo v0.3.13
 	github.com/infraboard/keyauth v0.8.1
 	github.com/infraboard/mcube v1.9.7
 	github.com/rs/xid v1.4.0
+	github.com/shopspring/decimal v1.3.1
 	github.com/spf13/cobra v1.6.1
 	github.com/stretchr/testify v1.8.2
 	google.golang.org/grpc v1.53.0
@@ -32,8 +34,6 @@ require (
 	github.com/go-openapi/swag v0.19.15 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-stack/stack v1.8.0 // indirect
-	github.com/huaweicloud/huaweicloud-sdk-go-v3 v0.1.30 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect

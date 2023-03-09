@@ -8,16 +8,14 @@ import (
 // 查询云服务器详情列表
 // 参考文档: https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=ECS&api=ListServersDetails
 func (o *EcsOperator) QueryInstance(req *model.ListServersDetailsRequest) (*host.HostSet, error) {
-	// set := host.NewHostSet()
+	set := host.NewHostSet()
 
 	resp, err := o.client.ListServersDetails(req)
 	if err != nil {
 		return nil, err
 	}
+	set.Total = int64(*resp.Count)
+	set.Items = o.transferInstanceSet(resp.Servers).Items
 
-	o.log.Debugf(resp.String())
-	//set.Total = int64(*resp.Count)
-	//set.Items = o.transferInstanceSet(resp.Servers).Items
-
-	return nil, nil
+	return set, nil
 }

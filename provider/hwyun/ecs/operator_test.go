@@ -14,10 +14,11 @@ var (
 
 func TestQuery(t *testing.T) {
 	req := &model.ListServersDetailsRequest{}
-	_, err := op.QueryInstance(req)
+	set, err := op.QueryInstance(req)
 	if err != nil {
-		return
+		t.Fatal(err)
 	}
+	t.Log(set)
 }
 
 func init() {
