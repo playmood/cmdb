@@ -5,7 +5,7 @@ import (
 	"github.com/infraboard/mcube/app"
 	"github.com/infraboard/mcube/logger"
 	"github.com/infraboard/mcube/logger/zap"
-	"github.com/playmood/cmdb/apps/resource"
+	"github.com/playmood/cmdb/apps/host"
 	"github.com/playmood/cmdb/conf"
 	"google.golang.org/grpc"
 )
@@ -18,8 +18,7 @@ var (
 type service struct {
 	db  *sql.DB
 	log logger.Logger
-
-	resource.UnimplementedServiceServer
+	host.UnimplementedServiceServer
 }
 
 func (s *service) Config() error {
@@ -34,11 +33,11 @@ func (s *service) Config() error {
 }
 
 func (s *service) Name() string {
-	return resource.AppName
+	return host.AppName
 }
 
 func (s *service) Registry(server *grpc.Server) {
-	resource.RegisterServiceServer(server, svr)
+	host.RegisterServiceServer(server, svr)
 }
 
 func init() {
