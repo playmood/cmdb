@@ -175,7 +175,7 @@ func NewQueryHostRequestFromHTTP(r *http.Request) *QueryHostRequest {
 //	}
 type Pagger interface {
 	Next() bool
-	SetPageSize(ps int64)
+	SetPageSize(ps int32)
 	Scan(context.Context, *HostSet) error
 }
 
