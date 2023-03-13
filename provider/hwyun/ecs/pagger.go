@@ -35,6 +35,7 @@ type pagger struct {
 
 func (p *pagger) SetPageSize(ps int32) {
 	p.pageSize = ps
+	p.req.Limit = &ps
 }
 
 func (p *pagger) getOffset() *int32 {
@@ -54,7 +55,7 @@ func (p *pagger) nextReq() *model.ListServersDetailsRequest {
 func (p *pagger) Scan(ctx context.Context, hs *host.HostSet) error {
 	p.log.Debugf("query page: %d", p.pageNum)
 	set, err := p.op.QueryInstance(p.nextReq())
-	*hs = *set
+	*hs = *set.Clone()
 	if err != nil {
 		return err
 	}
