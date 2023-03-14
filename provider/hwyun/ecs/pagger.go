@@ -6,11 +6,11 @@ import (
 	"github.com/infraboard/mcube/flowcontrol/tokenbucket"
 	"github.com/infraboard/mcube/logger"
 	"github.com/infraboard/mcube/logger/zap"
-	"time"
 )
 import "github.com/playmood/cmdb/apps/host"
 
-func NewPagger(op *EcsOperator) host.Pagger {
+// 每秒5req
+func NewPagger(rate float64, op *EcsOperator) host.Pagger {
 	req := &model.ListServersDetailsRequest{}
 	p := &pagger{
 		op:       op,
@@ -19,7 +19,7 @@ func NewPagger(op *EcsOperator) host.Pagger {
 		pageNum:  1,
 		pageSize: 20,
 		log:      zap.L().Named("ecs"),
-		tb:       tokenbucket.NewBucket(5*time.Second, 3),
+		tb:       tokenbucket.NewBucketWithRate(rate, 3),
 	}
 	p.req = req
 	p.req.Offset = p.getOffset()

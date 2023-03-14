@@ -30,7 +30,7 @@ func TestQuery(t *testing.T) {
 }
 
 func TestPaggerQuery(t *testing.T) {
-	p := ecs.NewPagger(op)
+	p := ecs.NewPagger(5, op)
 	set := host.NewHostSet()
 	for p.Next() {
 		if err := p.Scan(context.Background(), set); err != nil {
