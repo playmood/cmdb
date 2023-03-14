@@ -12,7 +12,7 @@ func (s *impl) insert(ctx context.Context, t *task.Task) error {
 		return err
 	}
 	defer stmt.Close()
-
+	s.log.Debugf("sql: %s", insertTaskSQL)
 	_, err = stmt.Exec(
 		t.Id, t.Data.Region, t.Data.ResourceType, t.Data.SecretId, t.SecretDescription, t.Data.Timeout,
 		t.Status.Stage, t.Status.Message, t.Status.StartAt, t.Status.EndAt, t.Status.TotalSucceed, t.Status.TotalFailed,
@@ -31,7 +31,7 @@ func (s *impl) update(ctx context.Context, t *task.Task) error {
 	defer stmt.Close()
 
 	status := t.Status
-
+	s.log.Debugf("sql: %s", updateTaskSQL)
 	_, err = stmt.Exec(
 		status.Stage, status.Message, status.EndAt, status.TotalSucceed, status.TotalFailed, t.Id,
 	)

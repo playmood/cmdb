@@ -49,6 +49,7 @@ func (i *impl) syncHost(ctx context.Context, req *syncHostReqeust) {
 		req.secret.Data.ApiSecret,
 		req.task.Data.Region)
 
+	i.log.Debugf("%s %s %s", req.secret.Data.ApiKey, req.secret.Data.ApiSecret, req.task.Data.Region)
 	client, err := hwConn.EcsClient()
 	if err != nil {
 		panic(err)

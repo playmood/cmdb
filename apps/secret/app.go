@@ -54,6 +54,7 @@ func NewSecret(req *CreateSecretRequest) (*Secret, error) {
 func NewCreateSecretRequest() *CreateSecretRequest {
 	return &CreateSecretRequest{
 		RequestRate: 5,
+		Vendor:      2,
 	}
 }
 
