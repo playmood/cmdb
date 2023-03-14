@@ -42,8 +42,8 @@ func (i *impl) syncHost(ctx context.Context, req *syncHostReqeust) {
 		}
 	}()
 
-	// 只实现主机同步, 初始化腾讯cvm operator
-	// NewTencentCloudClient client
+	// 只实现主机同步, 初始化华为ecs operator
+	// NewHuaweiCloudClient client
 	hwConn := connectivity.NewHuaweiCloudClient(
 		req.secret.Data.ApiKey,
 		req.secret.Data.ApiSecret,
