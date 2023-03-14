@@ -46,6 +46,8 @@ cloud.google.com/go/storage v1.6.0/go.mod h1:N7U0C8pVQ/+NIKOBQyamJIeKQKkZ+mxpohl
 cloud.google.com/go/storage v1.8.0/go.mod h1:Wv1Oy7z6Yz3DshWRJFhqM/UCfaWIRTdp0RXyy7KQOVs=
 cloud.google.com/go/storage v1.10.0/go.mod h1:FLPqc6j+Ki4BU591ie1oL6qBQGu2Bl/tZ9ullr3+Kg0=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
+gitee.com/go-course/keyauth-g7 v0.0.8 h1:UpCQ87NfbWrkM4Hq2deBb0DztVE6ASVXjYkdHM3QYBw=
+gitee.com/go-course/keyauth-g7 v0.0.8/go.mod h1:MW/VfJM4/qSUrP7vNQBNKM4g9+2XKFNnqPkFm9SPS48=
 github.com/AlecAivazis/survey/v2 v2.3.2/go.mod h1:TH2kPCDU3Kqq7pLbnCWwZXDBjnhZtmsCle5EiYDJ2fg=
 github.com/Azure/go-ntlmssp v0.0.0-20200615164410-66371956d46c/go.mod h1:chxPXzSsl7ZWRAuOIE23GDNzjWuZquvFlgA8xmpunjU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
@@ -313,8 +315,8 @@ github.com/inconshreveable/mousetrap v1.0.1/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLf
 github.com/infraboard/keyauth v0.8.1 h1:DEOTqcu2/BjauVILDKK0rECPdXXTOr5HakTZ6Bdxqik=
 github.com/infraboard/keyauth v0.8.1/go.mod h1:vt7S1SMZTPy4aD/kYIvpQKh8gL8iRHdleB9lqfZUyKY=
 github.com/infraboard/mcube v1.8.11/go.mod h1:2z/ARQRRgITOZGAO7FFRcQCOOZTJBJixRb6vINzGE6Y=
-github.com/infraboard/mcube v1.9.7 h1:G7a1fLINhGX9pymlrVb8K/4Jmct9a/+RNT4qPXuAdaA=
-github.com/infraboard/mcube v1.9.7/go.mod h1:OS2AES2vybyoqRqZCRjkwXntXkNgg0CyL5PWrCS/iVw=
+github.com/infraboard/mcube v1.9.0 h1:a2qtMHP68sEwHRf6Emq3FC679WGlb/od+68AeDbjyZ8=
+github.com/infraboard/mcube v1.9.0/go.mod h1:2z/ARQRRgITOZGAO7FFRcQCOOZTJBJixRb6vINzGE6Y=
 github.com/josharian/intern v1.0.0 h1:vlS4z54oSdjm0bgjRigI+G1HpF+tI+9rE5LLzOg8HmY=
 github.com/josharian/intern v1.0.0/go.mod h1:5DoeVV0s6jJacbCEi61lwdGj/aVlrQvzHFFd8Hwg//Y=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
@@ -999,5 +1001,3 @@ honnef.co/go/tools v0.0.1-2020.1.4/go.mod h1:X/FiERA/W4tHapMX5mGpAtMSVEeEUOyHaw9
 rsc.io/binaryregexp v0.2.0/go.mod h1:qTv7/COck+e2FymRvadv62gMdZztPaShugOCi3I+8D8=
 rsc.io/quote/v3 v3.1.0/go.mod h1:yEA65RcK8LyAZtP9Kv3t0HmxON59tX3rD+tICJqUlj0=
 rsc.io/sampler v1.3.0/go.mod h1:T1hPZKmBbMNahiBKFy5HrXp6adAjACjK9JXDnKaTXpA=
-sigs.k8s.io/yaml v1.3.0 h1:a2VclLzOGrwOHDiV8EfBGhvjHvP46CtW5j6POvhYGGo=
-sigs.k8s.io/yaml v1.3.0/go.mod h1:GeOyir5tyXNByN85N/dRIT9es5UQNerPYEKK56eTBm8=

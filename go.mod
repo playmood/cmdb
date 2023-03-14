@@ -3,6 +3,7 @@ module github.com/playmood/cmdb
 go 1.19
 
 require (
+	gitee.com/go-course/keyauth-g7 v0.0.8
 	github.com/BurntSushi/toml v1.2.1
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/emicklei/go-restful-openapi v1.4.1
@@ -15,7 +16,7 @@ require (
 	github.com/huaweicloud/huaweicloud-sdk-go-v3 v0.1.30
 	github.com/imdario/mergo v0.3.13
 	github.com/infraboard/keyauth v0.8.1
-	github.com/infraboard/mcube v1.9.7
+	github.com/infraboard/mcube v1.9.0
 	github.com/rs/xid v1.4.0
 	github.com/shopspring/decimal v1.3.1
 	github.com/spf13/cobra v1.6.1
@@ -59,5 +60,4 @@ require (
 	gopkg.in/ini.v1 v1.66.6 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	sigs.k8s.io/yaml v1.3.0 // indirect
 )
