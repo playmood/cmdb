@@ -3,8 +3,10 @@ package ecs
 import (
 	"context"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/services/ecs/v2/model"
+	"github.com/infraboard/mcube/flowcontrol/tokenbucket"
 	"github.com/infraboard/mcube/logger"
 	"github.com/infraboard/mcube/logger/zap"
+	"time"
 )
 import "github.com/playmood/cmdb/apps/host"
 
@@ -17,6 +19,7 @@ func NewPagger(op *EcsOperator) host.Pagger {
 		pageNum:  1,
 		pageSize: 20,
 		log:      zap.L().Named("ecs"),
+		tb:       tokenbucket.NewBucket(5*time.Second, 3),
 	}
 	p.req = req
 	p.req.Offset = p.getOffset()
@@ -31,6 +34,8 @@ type pagger struct {
 	pageNum  int32
 	pageSize int32
 	log      logger.Logger
+	// 令牌桶 流量控制
+	tb *tokenbucket.Bucket
 }
 
 func (p *pagger) SetPageSize(ps int32) {
@@ -44,11 +49,15 @@ func (p *pagger) getOffset() *int32 {
 }
 
 func (p *pagger) Next() bool {
+	//return true
 	return p.hasNext
 }
 
 func (p *pagger) nextReq() *model.ListServersDetailsRequest {
+	// 等待分配令牌
+	p.tb.Wait(1)
 	p.req.Offset = p.getOffset()
+	p.req.Limit = &p.pageSize
 	return p.req
 }
 
