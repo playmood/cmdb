@@ -6,4 +6,5 @@ import (
 	_ "github.com/playmood/cmdb/apps/host/api"
 	_ "github.com/playmood/cmdb/apps/resource/api"
 	_ "github.com/playmood/cmdb/apps/secret/api"
+	_ "github.com/playmood/cmdb/apps/task/api"
 )
